@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion "24.0.2"
+    compileSdkVersion 25
+    buildToolsVersion '25.0.0'
 
     defaultConfig {
         applicationId "com.matrix.yukun.playerapplication"
         minSdkVersion 19
-        targetSdkVersion 24
+        targetSdkVersion 25
         versionCode 1
         versionName "1.0"
     }
@@ -27,12 +27,13 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:24.1.1'
     //    compile 'com.shuyu:gsyVideoPlayer:1.1.7'
     //    compile 'com.github.CarGuo:GSYVideoPlayer:v1.5.9'
     //    compile project(':ijkplayer-exo')
     //    compile project(':ijkplayer-java')
     compile project(':ijkplayer-exo')
     compile project(':ijkplayer-java')
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
 }

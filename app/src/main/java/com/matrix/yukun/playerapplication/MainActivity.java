@@ -1,11 +1,13 @@
 package com.matrix.yukun.playerapplication;
 
+import android.app.Activity;
 import android.media.AudioManager;
-import android.support.v7.app.AppCompatActivity;
+//import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.SurfaceView;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Toast;
 
 
@@ -16,7 +18,7 @@ import tv.danmaku.ijk.media.player.IjkMediaPlayer;
 import tv.danmaku.ijk.media.player.MediaPlayerProxy;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
     String URL1="http://baobab.wdjcdn.com/14564977406580.mp4";
     String URL = "http://2449.vod.myqcloud.com/2449_22ca37a6ea9011e5acaaf51d105342e3.f20.mp4";
     private IjkMediaPlayer mIjkMediaPlayer;
@@ -59,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
         mPlayerProxy.setOnCompletionListener(new IMediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(IMediaPlayer mp) {
@@ -69,7 +72,9 @@ public class MainActivity extends AppCompatActivity {
         mPlayerProxy.setOnVideoSizeChangedListener(new IMediaPlayer.OnVideoSizeChangedListener() {
             @Override
             public void onVideoSizeChanged(IMediaPlayer mp, int width, int height, int sar_num, int sar_den) {
-
+                ViewGroup.LayoutParams params=mSurfaceView.getLayoutParams();
+                params.height=200;
+                mSurfaceView.setLayoutParams(params);
             }
         });
     }
